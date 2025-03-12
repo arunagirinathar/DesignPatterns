@@ -1,0 +1,19 @@
+{
+  "name": "arunagirinathar/php-design-patterns",
+  "description": "A lightweight PHP package implementing common design patterns like Singleton and Factory. Useful for clean and efficient object management in PHP projects.",
+  "type": "library",
+  "license": "GPL-3.0-only",
+  "autoload": {
+    "psr-4": {
+      "Arunagirinathar\\DesignPatterns\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "R. Sivaramakrishna Sharma",
+      "email": "arunagirinathar@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {}
+}
