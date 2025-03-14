@@ -17,7 +17,8 @@ Older versions of PHP may not have certain function available. For example
 `json_validate()` is not available in PHP versions older than 8.3.0.
 This class transparently implements all this functionality as a shim / polyfill without disturbing environments where such functions are available.
 
-Functions currently implemented in the polyfill
+Functions currently implemented in the polyfills
+
 ✅ **`json_validate`** 
 
 ---

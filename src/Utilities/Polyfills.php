@@ -1,6 +1,6 @@
 <?php
 
-namespace Arunagirinathar\DesignPatterns;
+namespace Arunagirinathar\DesignPatterns\Utilities;
 
 /**
  * Polyfills class
@@ -10,8 +10,8 @@ namespace Arunagirinathar\DesignPatterns;
  * 
  * php version 8
  *
- * @category DesignPattern
- * @package  Arunagirinathar\DesignPatterns
+ * @category Polyfills
+ * @package  Arunagirinathar\DesignPatterns\Utilities
  * @author   Arunagirinathar <arunagirinathar@gmail.com>
  * @license  GNU GPLv3 https://www.gnu.org/licenses/gpl-3.0.en.html
  * @link     https://github.com/arunagirinathar/DesignPatterns
@@ -19,28 +19,32 @@ namespace Arunagirinathar\DesignPatterns;
 
 class Polyfills
 {
-  public function __construct()
-  {
-    $this->initializePolyfills();
+  public static function init(): void{
+    self::json_validate();
   }
+  
+  // public function __construct()
+  // {
+  //   $this->initializePolyfills();
+  // }
 
-  private function initializePolyfills()
-  {
-    // Use Reflection to get all methods of the class
-    $reflection = new \ReflectionClass($this);
-    $methods = $reflection->getMethods(\ReflectionMethod::IS_PRIVATE); // Retrieve only private methods
+  // private function initializePolyfills()
+  // {
+  //   // Use Reflection to get all methods of the class
+  //   $reflection = new \ReflectionClass($this);
+  //   $methods = $reflection->getMethods(\ReflectionMethod::IS_PRIVATE); // Retrieve only private methods
 
-    foreach ($methods as $method) {
-      $methodName = $method->getName();
-      if ($methodName !== 'initializePolyfills') { // Skip the initializer itself
-        // Make the method accessible and invoke it
-        $method->setAccessible(true);
-        $method->invoke($this);
-      }
-    }
-  }
+  //   foreach ($methods as $method) {
+  //     $methodName = $method->getName();
+  //     if ($methodName !== 'initializePolyfills') { // Skip the initializer itself
+  //       // Make the method accessible and invoke it
+  //       $method->setAccessible(true);
+  //       $method->invoke($this);
+  //     }
+  //   }
+  // }
 
-  private function json_validate()
+  private static function json_validate()
   {
     if (!function_exists('json_validate')) {
       eval('function json_validate(string $string): bool
