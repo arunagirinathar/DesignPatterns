@@ -10,7 +10,15 @@ A lightweight PHP package implementing common design patterns like **Singleton**
 
 ## 📌 Features
 ✅ **Singleton** – Ensures only one instance of a class exists.  
-✅ **Factory** (Coming Soon) – Creates objects without specifying the exact class type.  
+✅ **Factory**  – Creates objects without specifying the exact class type.  
+
+## Polyfills (Extra Feature)
+Older versions of PHP may not have certain function available. For example
+`json_validate()` is not available in PHP versions older than 8.3.0.
+This class transparently implements all this functionality as a shim / polyfill without disturbing environments where such functions are available.
+
+Functions currently implemented in the polyfill
+✅ **`json_validate`** 
 
 ---
 
