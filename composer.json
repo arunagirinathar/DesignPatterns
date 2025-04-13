@@ -6,7 +6,8 @@
   "autoload": {
     "psr-4": {
       "Arunagirinathar\\DesignPatterns\\": "src/",
-       "Arunagirinathar\\DesignPatterns\\Utilities\\": "src/utilities"
+      "Arunagirinathar\\DesignPatterns\\ObjectFactory\\": "src/object_factory",
+      "Arunagirinathar\\DesignPatterns\\Utilities\\": "src/utilities"
     }
   },
   "authors": [
