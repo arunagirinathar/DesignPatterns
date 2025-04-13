@@ -17,7 +17,7 @@ abstract class FrozenObjectFactorySingleton extends ImmutableObjectFactorySingle
      *
      * @throws \Exception Always throws an exception, as frozen objects cannot be modified.
      */
-    private function __set($key, $value)
+    public function __set($key, $value)
     {
         /**
          * Now there's no point in placing the blame
@@ -34,7 +34,7 @@ abstract class FrozenObjectFactorySingleton extends ImmutableObjectFactorySingle
      *
      * @throws \Exception Always throws an exception, as frozen objects cannot have properties unset.
      */
-    private function __unset($key)
+    public function __unset($key)
     {
         throw new \Exception("Cannot unset property '$key' on a immutable object.");
     }
