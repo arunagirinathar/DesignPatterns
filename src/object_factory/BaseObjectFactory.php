@@ -84,9 +84,9 @@ trait BaseObjectFactory
         return $key;
     }
 
-    public static function create(array $args = [], bool $lock = false): self
+    public static function create(array $args = []): self
     {
-        return new static($lock, $args);
+        return new static($args);
     }
 
     public function assign(int|string $key, mixed $value): static
