@@ -15,7 +15,7 @@ namespace Arunagirinathar\DesignPatterns;
  * @license  GNU GPLv3 https://www.gnu.org/licenses/gpl-3.0.en.html
  * @link     https://github.com/arunagirinathar/DesignPatterns
  * @since    1.0.0
- * @version  1.1.0
+ * @version  1.1.1
  */
 abstract class Singleton
 {
@@ -27,7 +27,11 @@ abstract class Singleton
   private function __wakeup() {} // Prevent unserializing
 
   // @since 1.1.0
-  private function __sleep() {} // Prevent serializing
+  public function __sleep() {
+
+    // Fixed to return an empty array to prevent serialization
+    return [];
+  } // Prevent serializing
 
   /**
    * Get the singleton instance
