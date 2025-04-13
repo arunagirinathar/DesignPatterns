@@ -7,7 +7,7 @@ trait BaseObjectFactory
     protected array $_var;
     protected readonly bool $lockOnAssign;
 
-    private function initAssign(array $args)
+    private function initAssign(array $args): void
     {
         if (!empty($args)) {
             foreach ($args as $key => $value) {
@@ -46,7 +46,7 @@ trait BaseObjectFactory
         $this->_var[$key] = $value;
     }
 
-    public function __unset(string $var)
+    public function __unset(string $var): void
     {
         if (!array_key_exists($var, $this->_var)) {
             trigger_error("Trying to unset undefined property '$var'", E_USER_NOTICE);
@@ -89,13 +89,13 @@ trait BaseObjectFactory
         return new static($lock, $args);
     }
 
-    public function assign($key, $value)
+    public function assign(int|string $key, mixed $value): static
     {
         $this->__set($key, $value);
         return $this;
     }
 
-    public function with($key, $value)
+    public function with(int|string $key, mixed $value): static
     {
         return $this->assign($key, $value);
     }

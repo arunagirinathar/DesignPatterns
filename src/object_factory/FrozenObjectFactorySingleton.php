@@ -17,7 +17,7 @@ abstract class FrozenObjectFactorySingleton extends ImmutableObjectFactorySingle
      *
      * @throws \Exception Always throws an exception, as frozen objects cannot be modified.
      */
-    public function __set($key, $value)
+    public function __set($key, $value):void
     {
         /**
          * Now there's no point in placing the blame
