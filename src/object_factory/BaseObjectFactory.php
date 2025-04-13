@@ -4,7 +4,7 @@ namespace Arunagirinathar\DesignPatterns\ObjectFactory;
 
 trait BaseObjectFactory
 {
-    protected array $_var;
+    protected array $_var = [];
     protected readonly bool $lockOnAssign;
 
     private function initAssign(array $args): void
