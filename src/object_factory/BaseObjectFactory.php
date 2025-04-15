@@ -99,4 +99,14 @@ trait BaseObjectFactory
     {
         return $this->assign($key, $value);
     }
+
+    public function toArray(): array
+    {
+        return $this->_var;
+    }
+
+    public function propertiesAsArray(): array
+    {
+        return $this->toArray();
+    }
 }
