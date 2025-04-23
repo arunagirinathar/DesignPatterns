@@ -84,7 +84,7 @@ trait BaseObjectFactory
         return $key;
     }
 
-    public static function create(array $args = []): self
+    public static function create(array $args = []): static
     {
         return new static($args);
     }
